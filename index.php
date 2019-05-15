@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-$connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8', 'root', 'root');
+$connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','root','root');
 ?>
 
 <html lang="ru" >
@@ -20,12 +20,16 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8', '
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
 	<thead>
 		<tr>
+			<th>Номер</th>
 			<th>Дата проведения</th>
 			<th>Место проведения</th>
 			<th>Название мероприятия</th>
 			<th>Уровень</th>
 			<th>Результат участия</th>
 			<th>Грамоты и дипломы</th>
+			<th style="text-align:center;width:100px;">Add row <button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+				</button></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -35,17 +39,48 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8', '
 				"WHERE group_has_groupevent.fk_group = 1;")->fetchAll(PDO::FETCH_ASSOC) as $row)
 			{
 				echo "<tr>";
+				echo "<td>" . $row['pk_event'] . "</td>";
 				echo "<td>" . $row['date'] . "</td>";
 				echo "<td>" . $row['address'] . "</td>";
 				echo "<td>" . $row['name'] . "</td>";
 				echo "<td>" . $row['fk_level'] . "</td>";
 				echo "<td>" . $row['prizePlace'] . "</td>";
 				echo "<td></td>";
+				echo "<td>";
+				echo "	<button type=\"button\" class=\"btn btn-primary btn-xs dt-edit\" style=\"margin-right:16px;\">";
+				echo "		<span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>";
+				echo "	</button>";
+				echo "	<button type=\"button\" class=\"btn btn-danger btn-xs dt-delete\">";
+				echo "		<span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>";
+				echo "	</button>";
+				echo "</td>";
 				echo "</tr>";
 			}
 		?>
 	</tbody>
 </table>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Информация</h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/autofill/2.3.3/css/autoFill.bootstrap.css"/>
