@@ -133,7 +133,7 @@ $(document).ready(function() {
 			var dtRow = $this.parents('tr');
 			var table = $('#example').DataTable();
 			$.ajax({
-				data: 'pk=' + test.data()[dtRow[0].rowIndex-1][0],
+				data: 'pk=' + table.data()[dtRow[0].rowIndex-1][0],
 				url: 'delete_row.php',
 				method: 'POST', // or GET
 				success: function(msg) {
