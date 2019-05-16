@@ -40,7 +40,7 @@ $(document).ready(function() {
 				}]
 			}, {
 				extend: 'collection',
-				text: 'Export',
+				text: 'Экспорт',
 				buttons: [{
 						text: 'Excel',
 						extend: 'excelHtml5',
