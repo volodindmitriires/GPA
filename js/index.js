@@ -137,7 +137,7 @@ $(document).ready(function() {
 				url: 'delete_row.php',
 				method: 'POST', // or GET
 				success: function(msg) {
-					alert(msg);
+					// alert(msg);
 					table.row(dtRow[0].rowIndex-1).remove().draw( false );
 				}
 			});
