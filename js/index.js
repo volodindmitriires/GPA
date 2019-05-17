@@ -92,10 +92,8 @@ $(document).ready(function() {
 	//Add row button
 	$('.dt-add').each(function () {
 		$(this).on('click', function(evt){
-			//Create some data and insert it
 			var rowData = [];
 			var table = $('#example').DataTable();
-			//Store next row number in array
 			var info = table.page.info();
 			rowData.push('');
 			var date = new Date();
@@ -105,8 +103,8 @@ $(document).ready(function() {
 			rowData.push('Областной');
 			rowData.push(0);
 			rowData.push('');
+			rowData.push(1);
 			rowData.push('<button type="button" class="btn btn-primary btn-xs dt-edit" style="margin-right:16px;"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button><button type="button" class="btn btn-danger btn-xs dt-delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>');
-			//Looping over columns is possible
 			//var colCount = table.columns()[0].length;
 			//for(var i=0; i < colCount; i++){			}
 
