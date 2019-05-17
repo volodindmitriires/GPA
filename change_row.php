@@ -47,7 +47,7 @@ if (isset($_POST["Submit"]))
   $level = trim(htmlspecialchars($_POST["c-level"]));
   $prizePlace = trim(htmlspecialchars($_POST["c-prizePlace"]));
   // $image = trim(htmlspecialchars($_POST["c-image"]));
-  $connection->query("UPDATE groupevent SET pk_event=$pk,name=$name,address=$address,date='$date',fk_level=$fk_level WHERE pk_event=$pk;")->fetchAll(PDO::FETCH_ASSOC);
+  $connection->query("UPDATE groupevent SET pk_event=$pk,name='$name',address='$address',date='$date',fk_level=$fk_level WHERE pk_event=$pk;")->fetchAll(PDO::FETCH_ASSOC);
   $connection->query("UPDATE group_has_groupevent SET prizePlace=$prizePlace WHERE fk_group=1 and fk_event=$pk;")->fetchAll(PDO::FETCH_ASSOC);
   echo "<script>window.location.href = \"index.php\"</script>";
 }
