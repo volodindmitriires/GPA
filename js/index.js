@@ -2,7 +2,7 @@ $(document).ready(function() {
 		//Only needed for the filename of export files.
 		//Normally set in the title tag of your page.document.title = 'Simple DataTable';
 		//Define hidden columns
-		var hCols = [0];
+		var hCols = [0,7];
 		// DataTable initialisation
 		$('#example').DataTable({
 			"dom": "<'row'<'col-sm-4'B><'col-sm-2'l><'col-sm-6'p<br/>i>>" + "<'row'<'col-sm-12'tr>>" + "<'row'<'col-sm-12'p<br/>i>>",
@@ -144,7 +144,7 @@ $(document).ready(function() {
 			// target.append("Грамоты и дипломы:<input name=\"c-image\" id=\"image\" value=\"" + cr[6] + "\"><br/>");
 			// $('#myModal').modal('show');
 			var link = "change_row.php"
-			var request = "?pk="+cr[0]+"&"+"date="+cr[1]+"&"+"address="+cr[2]+"&"+"name="+cr[3]+"&"+"level="+cr[4]+"&"+"prizePlace="+cr[5]+"&"+"image="+cr[6];
+			var request = "?pk="+cr[0]+"&"+"date="+cr[1]+"&"+"address="+cr[2]+"&"+"name="+cr[3]+"&"+"level="+cr[4]+"&"+"prizePlace="+cr[5]+"&"+"image="+cr[6]+"&"+"fk_level="+cr[7];
 			window.location.href = link + request;
 		});
 	});

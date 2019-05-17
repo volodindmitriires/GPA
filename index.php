@@ -27,6 +27,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 			<th>Уровень</th>
 			<th>Результат участия</th>
 			<th>Грамоты и дипломы</th>
+			<th>fk_level</th>
 			<th style="text-align:center;width:100px;">Добавить запись<button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add">
 					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				</button></th>
@@ -34,7 +35,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 	</thead>
 	<tbody>
 		<?php
-			foreach($connection->query("SELECT groupevent.pk_event, groupevent.name, groupevent.address, groupevent.date, level.name as 'level_name', group_has_groupevent.prizePlace
+			foreach($connection->query("SELECT groupevent.pk_event, groupevent.fk_level, groupevent.name, groupevent.address, groupevent.date, level.name as 'level_name', group_has_groupevent.prizePlace
 			FROM groupevent INNER JOIN group_has_groupevent
 			ON groupevent.pk_event = group_has_groupevent.fk_event
 			INNER JOIN level ON groupevent.fk_level = level.pk_level
@@ -48,6 +49,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 				echo "<td>" . $row['level_name'] . "</td>";
 				echo "<td>" . $row['prizePlace'] . "</td>";
 				echo "<td></td>";
+				echo "<td>" . $row['fk_level'] . "</td>";
 				echo "<td>";
 				echo "	<button type=\"button\" class=\"btn btn-primary btn-xs dt-edit\" style=\"margin-right:16px;\">";
 				echo "		<span class=\"glyphicon glyphicon-pencil\" aria-hidden=\"true\"></span>";
