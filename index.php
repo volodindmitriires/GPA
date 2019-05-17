@@ -9,8 +9,8 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 <head>
   <meta charset="UTF-8">
   <title>Мероприятия</title>
-  
-  
+
+
 
 
 </head>
@@ -63,11 +63,11 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 </table>
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<!--<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">-->
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <!--<div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Информация</h4>
@@ -81,7 +81,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
     </div>
 
   </div>
-</div>
+</div>-->
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css"/>
@@ -96,7 +96,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.4/css/rowReorder.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/scroller/2.0.0/css/scroller.bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.3.0/css/select.bootstrap.min.css"/>
- 
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
@@ -125,7 +125,7 @@ $connection = new PDO('mysql:host=localhost;dbname=classteacher;charset=utf8','r
 
 
 
-
+		<script src="js/date.format.js"></script>
     <script  src="js/index.js"></script>
 
 
